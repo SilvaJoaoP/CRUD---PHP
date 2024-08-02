@@ -33,7 +33,7 @@ $desktops = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <th>ID</th>
                     <th>CPU</th>
                     <th>GPU</th>
-                    <th>MoBo</th>
+                    <th>MOBO</th>
                     <th>DDRAM</th>
                     <th>Ações</th>
                 </tr>
