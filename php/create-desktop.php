@@ -42,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label for="MOBO">MoBo:</label>
             <input type="text" id="MOBO" name="MOBO" required>
             <label for="DDRAM">DDRAM:</label>
-            <input type="DDRAM" id="DDRAM" name="DDRAM" required>
+            <input type="text" id="DDRAM" name="DDRAM" required>
             <button type="submit">Adicionar</button>
         </form>
     </main>

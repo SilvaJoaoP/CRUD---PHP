@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <label for="MOBO">MoBo:</label>
             <input type="text" id="MOBO" name="MOBO" value="<?= $desktop['MOBO'] ?>" required>
             <label for="DDRAM">DDRAM:</label>
-            <input type="DDRAM" id="DDRAM" name="DDRAM" value="<?= $desktop['DDRAM'] ?>" required>
+            <input type="text" id="DDRAM" name="DDRAM" value="<?= $desktop['DDRAM'] ?>" required>
             <button type="submit">Atualizar</button>
         </form>
     </main>
