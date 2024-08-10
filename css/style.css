@@ -1,0 +1,135 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4;
+  color: #333;
+  padding: 20px;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #0073e6;
+  color: #fff;
+  padding: 10px 0;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+/* Seletor de parentesco: header > nav */
+header > nav {
+  margin-top: 10px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* Seletor de parentesco: nav ul > li */
+nav ul > li {
+  display: inline;
+  margin: 0 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Estilo principal */
+main {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+main h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
+  color: #0073e6;
+  text-align: center;
+}
+
+/* Seletor de parentesco: main > form > label */
+main > form > label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="DDRAM"] {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+/* Seletor de parentesco: form > input + input */
+form > input[type="text"] + input[type="text"] {
+  margin-top: 10px;
+}
+
+button[type="submit"] {
+  background-color: #0073e6;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button[type="submit"]:hover {
+  background-color: #8e00b5;
+}
+
+/* Rodapé */
+footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #777;
+}
+
+/* Seletor de parentesco: footer > p */
+footer > p {
+  margin-top: 10px;
+}
+
+.desktop-icon {
+  text-align: center;
+  margin: 10px 0;
+}
+
+.desktop-icon svg {
+  fill: #0073e6; /* Cor do ícone */
+}
