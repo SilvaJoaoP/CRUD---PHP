@@ -1,8 +1,17 @@
 <?php
+// Inclui o arquivo de conexão com o banco de dados
 require_once 'db.php';
 
-$stmt = $pdo->query("SELECT * FROM desktops");
-$desktops = $stmt->fetchAll(PDO::FETCH_ASSOC);
+// Obtém o ID do desktop a partir da URL usando o método GET
+$id = $_GET['id'];
+
+// Prepara a instrução SQL para selecionar o desktop pelo ID
+$stmt = $pdo->prepare("SELECT * FROM desktops WHERE id = ?");
+// Executa a instrução SQL, passando o ID do desktop como parâmetro
+$stmt->execute([$id]);
+
+// Recupera os dados do desktop como um array associativo
+$desktop = $stmt->fetch(PDO::FETCH_ASSOC);
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +19,7 @@ $desktops = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de Desktops</title>
+    <title>Detalhes do Desktop</title>
     <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -19,41 +28,30 @@ $desktops = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <nav>
             <ul>
                 <li><a href="../index.php">Home</a></li>
-                <li><a href="read-desktop.php">Listar Desktops</a></li>
+                <li><a href="index-desktop.php">Listar Desktops</a></li>
                 <li><a href="create-desktop.php">Adicionar Desktop</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
-        <h2>Lista de Desktops</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>CPU</th>
-                    <th>GPU</th>
-                    <th>MoBo</th>
-                    <th>DDRAM</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($desktops as $desktop): ?>
-                    <tr>
-                        <td><?= $desktop['id'] ?></td>
-                        <td><?= $desktop['CPU'] ?></td>
-                        <td><?= $desktop['GPU'] ?></td>
-                        <td><?= $desktop['MOBO'] ?></td>
-                        <td><?= $desktop['DDRAM'] ?></td>
-                        <td>
-                            <a href="update-desktop.php?id=<?= $desktop['id'] ?>">Editar</a>
-                            <a href="delete-desktop.php?id=<?= $desktop['id'] ?>">Excluir</a>
-                        </td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
+        <h2>Detalhes do Desktop</h2>
+        <?php if ($desktop): ?>
+            <!-- Exibe os detalhes do desktop -->
+            <p><strong>ID:</strong> <?= $desktop['id'] ?></p>
+            <p><strong>CPU:</strong> <?= $desktop['MOBO'] ?></p>
+            <p><strong>GPU:</strong> <?= $desktop['GPU'] ?></p>
+            <p><strong>MOBO:</strong> <?= $desktop['MOBO'] ?></p>
+            <p><strong>DDRAM:</strong> <?= $desktop['DDRAM'] ?></p>
+            <p>
+                <!-- Links para editar e excluir o desktop -->
+                <a href="update-desktop.php?id=<?= $desktop['id'] ?>">Editar</a>
+                <a href="delete-desktop.php?id=<?= $desktop['id'] ?>">Excluir</a>
+            </p>
+        <?php else: ?>
+            <!-- Exibe uma mensagem caso o desktop não seja encontrado -->
+            <p>Desktop não encontrado.</p>
+        <?php endif; ?>
     </main>
 
     <footer>
