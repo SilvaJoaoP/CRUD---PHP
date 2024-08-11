@@ -8,15 +8,15 @@
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
+  background-color: #151515;
+  color: #ffff00;
   padding: 20px;
 }
 
 /* Cabeçalho */
 header {
-  background-color: #0073e6;
-  color: #fff;
+  background-color: #191970;
+  color: #ffff00;
   padding: 10px 0;
   text-align: center;
   margin-bottom: 20px;
@@ -27,7 +27,6 @@ header h1 {
   font-size: 24px;
 }
 
-/* Seletor de parentesco: header > nav */
 header > nav {
   margin-top: 10px;
 }
@@ -37,14 +36,13 @@ nav ul {
   padding: 0;
 }
 
-/* Seletor de parentesco: nav ul > li */
 nav ul > li {
   display: inline;
   margin: 0 20px;
 }
 
 nav ul li a {
-  color: #fff;
+  color: #ffff00;
   text-decoration: none;
 }
 
@@ -52,9 +50,8 @@ nav ul li a:hover {
   text-decoration: underline;
 }
 
-/* Estilo principal */
 main {
-  background-color: #fff;
+  background-color: #191970;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -65,11 +62,10 @@ main {
 main h2 {
   margin-bottom: 20px;
   font-size: 20px;
-  color: #0073e6;
+  color: #ffff00;
   text-align: center;
 }
 
-/* Seletor de parentesco: main > form > label */
 main > form > label {
   margin-bottom: 5px;
   font-weight: bold;
@@ -89,18 +85,17 @@ input[type="text"],
 input[type="DDRAM"] {
   padding: 10px;
   margin-bottom: 15px;
-  border: 1px solid #ccc;
+  border: 1px solid #ffbf00;
   border-radius: 3px;
 }
 
-/* Seletor de parentesco: form > input + input */
 form > input[type="text"] + input[type="text"] {
   margin-top: 10px;
 }
 
 button[type="submit"] {
-  background-color: #0073e6;
-  color: #fff;
+  background-color: #ffff00;
+  color: #151515;
   padding: 10px;
   border: none;
   border-radius: 3px;
@@ -109,10 +104,11 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #8e00b5;
+  background-color: #0e0e7b;
+  color: #ffff00;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Rodapé */
 footer {
   margin-top: 20px;
   text-align: center;
@@ -120,7 +116,6 @@ footer {
   color: #777;
 }
 
-/* Seletor de parentesco: footer > p */
 footer > p {
   margin-top: 10px;
 }
@@ -131,5 +126,5 @@ footer > p {
 }
 
 .desktop-icon svg {
-  fill: #0073e6; /* Cor do ícone */
+  fill: #0073e6;
 }
