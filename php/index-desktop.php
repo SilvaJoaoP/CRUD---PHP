@@ -1,10 +1,9 @@
 <?php
-// Inclui o arquivo de conexão com o banco de dados
+
 require_once 'db.php';
 
-// Executa a consulta para obter todos os desktops
 $stmt = $pdo->query("SELECT * FROM desktops");
-// Recupera todos os resultados da consulta como um array associativo
+
 $desktops = $stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -42,17 +41,14 @@ $desktops = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 </tr>
             </thead>
             <tbody>
-                <!-- Itera sobre os desktops e cria uma linha para cada desktop na tabela -->
                 <?php foreach ($desktops as $desktop): ?>
                     <tr>
-                        <!-- Exibe os dados do desktop -->
                         <td><?= $desktop['id'] ?></td>
                         <td><?= $desktop['CPU'] ?></td>
                         <td><?= $desktop['GPU'] ?></td>
                         <td><?= $desktop['MOBO'] ?></td>
                         <td><?= $desktop['DDRAM'] ?></td>
                         <td>
-                            <!-- Links para visualizar, editar e excluir o desktop -->
                             <a href="read-desktop.php?id=<?= $desktop['id'] ?>">Visualizar</a>
                             <a href="update-desktop.php?id=<?= $desktop['id'] ?>">Editar</a>
                             <a href="delete-desktop.php?id=<?= $desktop['id'] ?>">Excluir</a>
